@@ -5,12 +5,14 @@ import { LoginComponent } from './components/login/login.component';
 //import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SoniatComponent } from './components/soniat/soniat.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'soniat', component: SoniatComponent},
+  {path: 'contact', component: ContactListComponent},
  // {path: 'dashboard', component: DashboardComponent},
   {
     path: '',

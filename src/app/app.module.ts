@@ -60,7 +60,13 @@ import { OpcionuserComponent } from './user-profile/opcionuser/opcionuser.compon
 
 import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ContactListComponent } from './contact-list/contact-list.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   imports: [
@@ -72,12 +78,12 @@ import { BrowserModule } from '@angular/platform-browser';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-
     BrowserModule,
     InfiniteScrollModule,
-
-
-
+    MatToolbarModule,
+    MatCardModule,
+    MatDialogModule,
+    MatIconModule,
   
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
@@ -91,10 +97,13 @@ import { BrowserModule } from '@angular/platform-browser';
     HomeComponent,
     SoniatComponent,
     MessageComponent,
+    ContactListComponent,
+    ContactComponent,
      // SalirComponent,
 
   ],
-  providers: [interceptorProvider,
+  
+  providers: [interceptorProvider,ContactService,
     ConfigService,
     {
       provide   : APP_INITIALIZER,

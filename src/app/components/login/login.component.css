@@ -12,10 +12,7 @@
     user-select: none;
     cursor: default;
 }
-#input_Id{
-    border:0px;
-    border-bottom:2px solid #eee;
- }
+
 /*
  * Card component
  */
@@ -118,5 +115,6 @@ input:hover {
 
   .input_Id{
     border:0px;
-    border-bottom:2px solid #eee;
+    /* border-bottom:2px solid #eee; */
  }
+
