@@ -8,45 +8,53 @@
 
 <a [routerLink]="['/soniat']" >Soniat</a>
 
-<div class="text-center" style="padding-top: 30px;">
+<div class="text-center" style="padding-top: 5px;">
   <img src="{{ this.logo }}" id="logo" alt="...">
 </div>
-<div class="container">
-  <div class="card card-container">
+
+<mat-card class="card card-container" style="margin-top: 10px;">
+  <div class="container">
     <img id="profile-img" class="profile-img-card" src="{{this.avatar}}" alt="" />
     <p id="profile-name" class="profile-name-card">Iniciar Sesión</p>
+
+    
     <form name="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
 
       <div class="row">
         <div class="col-lg-1 col-1">
-          <em class="fas fa-user" style="margin-top: 50px;"></em>
+          <mat-icon  style="margin-top: 45px;">account_circle</mat-icon>
         </div>
-        <div class="col-lg-10 col-10">
-          <input type="email" class="form-control size input_Id" placeholder="Usuario" name="email"
-            [(ngModel)]="form.email" autocomplete="off" required>
+        <div class="col-lg-10 col-10 mt-4 pt-1">
+          <mat-form-field class="example-full-width">
+          <mat-label >Usuario</mat-label>
+          <input matInput name="email" [(ngModel)]="form.email" >
+        </mat-form-field>
+         
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-1 col-1">
-          <em class="fas fa-lock" style="margin-top: 30px;"></em>
+          <mat-icon  style="margin-top: 22px;">lock</mat-icon>
         </div>
-        <div class="col-lg-10 col-10">
-          <input type="password" class="form-control input_Id " style="margin-top: 20px; font-size: 13px;"
-            placeholder="Password" name="password" [(ngModel)]="form.password" autocomplete="off" required>
+        <div class="col-lg-10 col-10 mt-2">
+          <mat-form-field class="example-full-width">
+            <mat-label >Password</mat-label>
+            <input type="password" matInput name="password" [(ngModel)]="form.password" >
+          </mat-form-field>
         </div>
       </div>
 
       
         <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3 text-center">Credeciales Incorrectas {{ errorMsg }}</div>
       
-
-      <button style="margin-top: 30px;" class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
-        [disabled]="!f.valid">Continuar</button>
+        <button mat-raised-button color="primary" type="submit" class="btn btn-block "
+        [disabled]="!f.valid" style="margin-top: 30px;border-radius: 16px;">Primary</button>
+      <!-- <button  style="margin-top: 30px;" class="btn btn-lg btn-primary btn-block btn-signin" >Continuar</button> -->
       <div class="text-center " id="password">
         <a>¿Olvidaste tú Contraseña?</a>
       </div>
     </form>
-
   </div>
-</div>
+</mat-card>
+

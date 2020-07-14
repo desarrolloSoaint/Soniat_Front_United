@@ -98,7 +98,7 @@ export class SoniatComponent implements OnInit{
   } 
 
   mostrarEscribiendo(){
-    this.writes = 'escribiendo...';
+    this.writes = 'Escribiendo...';
   }
   borrarEscribiendo(mostrar: boolean){
     if(mostrar===false){

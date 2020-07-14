@@ -65,9 +65,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
-import { ContactComponent } from './contact/contact.component';
-import { ContactService } from './services/contact.service';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import { SoniatPublicoComponent } from './components/soniat-publico/soniat-publico.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -84,7 +86,10 @@ import { ContactService } from './services/contact.service';
     MatCardModule,
     MatDialogModule,
     MatIconModule,
-  
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRadioModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -98,12 +103,11 @@ import { ContactService } from './services/contact.service';
     SoniatComponent,
     MessageComponent,
     ContactListComponent,
-    ContactComponent,
-     // SalirComponent,
+    SoniatPublicoComponent,
 
   ],
   
-  providers: [interceptorProvider,ContactService,
+  providers: [interceptorProvider,
     ConfigService,
     {
       provide   : APP_INITIALIZER,

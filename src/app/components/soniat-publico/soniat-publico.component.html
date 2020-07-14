@@ -1,0 +1,78 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<div id="container">
+    <div id="chatbotarea">
+        <div id="chatbot" *ngIf="mostrar">
+            <header id="chatbothead">
+                <p>SONIAT </p>
+                <span id="minim_chat_window" class="icon_minim" (click)="toggleBox()"></span>
+            </header>
+            <div id="chatbotmessage" #scroll>
+                <div class="row">
+                    <div class="col">
+                            <input [(ngModel)]="showContent" type="radio" name="publico" value="2"> Público
+                    </div>
+                    <div class="col">
+                        <input [(ngModel)]="showContent" type="radio" name="publico" value="3" /> Privado
+                    </div>
+                </div>
+
+                <div [ngSwitch]="showContent">
+                    <div *ngSwitchCase="2">
+                        <form name="form" #archivarForm="ngForm" (ngSubmit)="onSubmit1(archivarForm)">
+
+                            <label for="exampleFormControlSelect1">País: </label>
+                            <select class="custom-select"  matInput  name="opcionSeleccionado" id="opcionSeleccionado" [(ngModel)]="clientes.id">
+                                <option disabled selected value="null">Seleccionar</option>
+                                <option *ngFor="let countrys of id" value="{{ countrys.id }}">
+                                    {{ countrys.name | titlecase }}</option>
+                            </select>
+                            <div class="form-group mt-4">
+
+                                <label for="exampleFormControlInput1">Correo Electrónico: </label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com" matInput #email name="email" [(ngModel)]="clientes.email">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn " [disabled]="!archivarForm.form.valid"
+                                    >Iniciar Chat</button></div>
+                        </form>
+                    </div>
+
+
+                    <div *ngSwitchCase="3">
+                        <form name="form" #f="ngForm">
+                            <div class="form-group">
+
+                                <label for="exampleFormControlInput1">Email: </label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="exampleFormControlInput1">Password </label>
+                                <input type="password" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Password">
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary " [disabled]="!f.valid"
+                                    (click)="soniat()">Iniciar Chat</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <img id="ocultar" class="img_size" src="assets/img/soniat.gif" alt="" *ngIf="!mostrar" (click)="toggleBox()">
+    </div>
+    <a [routerLink]="['/login']">Login</a>
+
+
+</div>

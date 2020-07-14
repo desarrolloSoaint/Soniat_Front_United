@@ -1,5 +1,5 @@
 .chatmessage{
-    background-color: var(--mensaje);
+    background-color: #a1a1a48c;
     padding: 1rem;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -8,8 +8,8 @@
     width: auto;
 }
 .usermessage > .chatmessage{
-    background-color: var(--headerBtn);
-    color: var(--fuenteEnviado);
+    background-color: #006595;
+    color: #fff;
     margin-right: 5%;
     justify-self: flex-end;
 }

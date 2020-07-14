@@ -1,6 +1,6 @@
 <div id="container">
     <div id="chatbotarea">
-        <div id="chatbot" *ngIf="mostrar">
+        <div id="chatbot" *ngIf="!mostrar">
             <header id="chatbothead">
                 <p>SONIAT </p>    
                 <input  class="filter"  name="filterSearch" placeholder="Buscar"  type="text" [(ngModel)]="filterSearch" (ngModelChange)="filterChanged($event)"/>  
@@ -19,7 +19,7 @@
                 </form>
             </footer>
         </div>
-        <img id="ocultar" class="img_size" src="assets/img/soniat.gif"  alt="" *ngIf="!mostrar" (click)="toggleBox()"> 
+        <img id="ocultar" class="img_size" src="assets/img/soniat.gif"  alt="" *ngIf="mostrar" (click)="toggleBox()"> 
     </div>
     <a [routerLink]="['/login']">Login</a>
 </div>

@@ -27,7 +27,7 @@
     0 -6px 16px -6px rgba(0,0,0,.025);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 45px auto 65px;
+    /* grid-template-rows: 45px auto 65px; */
     grid-template-areas: "headchat"
     "chatbody"
     "textinput";
@@ -82,6 +82,8 @@
     border: 0;
     cursor:pointer;
 }
+
+
 .fa-2x {
     font-size: 1rem;
 }
